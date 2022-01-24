@@ -1,0 +1,105 @@
+# Project: thalion
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = thalion_private.res
+OBJ      = main.o Menu/mainmenu.o Menu/navigation.o "New\ Game/choosehero.o" "New\ Game/heroname.o" "New\ Game/newgame.o" HUD/abilitiesnav.o HUD/hud.o Globals/globals.o Globals/structures.o Game/game.o System/datascanning.o System/numbers.o System/parameters.o System/verification.o Enemies/enemies.o Battle/battle.o Map/map.o Map/mapnavigation.o Items/items.o Drawings/drawings.o Store/store.o Titles/titles.o Help/help.o Intro/Intro.o $(RES)
+LINKOBJ  = main.o Menu/mainmenu.o Menu/navigation.o "New Game/choosehero.o" "New Game/heroname.o" "New Game/newgame.o" HUD/abilitiesnav.o HUD/hud.o Globals/globals.o Globals/structures.o Game/game.o System/datascanning.o System/numbers.o System/parameters.o System/verification.o Enemies/enemies.o Battle/battle.o Map/map.o Map/mapnavigation.o Items/items.o Drawings/drawings.o Store/store.o Titles/titles.o Help/help.o Intro/Intro.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc "../../../../Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib/libwinmm.a" "../../../../Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32/libwinmm.a" -m32 -s
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Documents/The Game/Thalion/Project/System" -I"C:/Documents/The Game/Thalion/Project/New Game" -I"C:/Documents/The Game/Thalion/Project/Menu" -I"C:/Documents/The Game/Thalion/Project/HUD" -I"C:/Documents/The Game/Thalion/Project/Globals" -I"C:/Documents/The Game/Thalion/Project/Game" -I"C:/Documents/The Game/Thalion/Project/Battle" -I"C:/Documents/The Game/Thalion/Project/Enemies" -I"C:/Documents/The Game/Thalion/Project/Map" -I"C:/Documents/The Game/Thalion/Project/Items" -I"C:/Documents/The Game/Thalion/Project/Drawings" -I"C:/Documents/The Game/Thalion/Project/Store" -I"C:/Documents/The Game/Thalion/Project/Titles" -I"C:/Documents/The Game/Thalion/Project/Help" -I"C:/Documents/The Game/Thalion/Project/Intro"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"C:/Documents/The Game/Thalion/Project/System" -I"C:/Documents/The Game/Thalion/Project/New Game" -I"C:/Documents/The Game/Thalion/Project/Menu" -I"C:/Documents/The Game/Thalion/Project/HUD" -I"C:/Documents/The Game/Thalion/Project/Globals" -I"C:/Documents/The Game/Thalion/Project/Game" -I"C:/Documents/The Game/Thalion/Project/Battle" -I"C:/Documents/The Game/Thalion/Project/Enemies" -I"C:/Documents/The Game/Thalion/Project/Map" -I"C:/Documents/The Game/Thalion/Project/Items" -I"C:/Documents/The Game/Thalion/Project/Drawings" -I"C:/Documents/The Game/Thalion/Project/Store" -I"C:/Documents/The Game/Thalion/Project/Titles" -I"C:/Documents/The Game/Thalion/Project/Help" -I"C:/Documents/The Game/Thalion/Project/Intro"
+BIN      = ../Thalion/thalion.exe
+CXXFLAGS = $(CXXINCS) -Ofast -m32 -std=gnu++11
+CFLAGS   = $(INCS) -Ofast -m32 -std=gnu++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Menu/mainmenu.o: Menu/mainmenu.cpp
+	$(CPP) -c Menu/mainmenu.cpp -o Menu/mainmenu.o $(CXXFLAGS)
+
+Menu/navigation.o: Menu/navigation.cpp
+	$(CPP) -c Menu/navigation.cpp -o Menu/navigation.o $(CXXFLAGS)
+
+"New\ Game/choosehero.o": New\ Game/choosehero.cpp
+	$(CPP) -c "New Game/choosehero.cpp" -o "New Game/choosehero.o" $(CXXFLAGS)
+
+"New\ Game/heroname.o": New\ Game/heroname.cpp
+	$(CPP) -c "New Game/heroname.cpp" -o "New Game/heroname.o" $(CXXFLAGS)
+
+"New\ Game/newgame.o": New\ Game/newgame.cpp
+	$(CPP) -c "New Game/newgame.cpp" -o "New Game/newgame.o" $(CXXFLAGS)
+
+HUD/abilitiesnav.o: HUD/abilitiesnav.cpp
+	$(CPP) -c HUD/abilitiesnav.cpp -o HUD/abilitiesnav.o $(CXXFLAGS)
+
+HUD/hud.o: HUD/hud.cpp
+	$(CPP) -c HUD/hud.cpp -o HUD/hud.o $(CXXFLAGS)
+
+Globals/globals.o: Globals/globals.cpp
+	$(CPP) -c Globals/globals.cpp -o Globals/globals.o $(CXXFLAGS)
+
+Globals/structures.o: Globals/structures.cpp
+	$(CPP) -c Globals/structures.cpp -o Globals/structures.o $(CXXFLAGS)
+
+Game/game.o: Game/game.cpp
+	$(CPP) -c Game/game.cpp -o Game/game.o $(CXXFLAGS)
+
+System/datascanning.o: System/datascanning.cpp
+	$(CPP) -c System/datascanning.cpp -o System/datascanning.o $(CXXFLAGS)
+
+System/numbers.o: System/numbers.cpp
+	$(CPP) -c System/numbers.cpp -o System/numbers.o $(CXXFLAGS)
+
+System/parameters.o: System/parameters.cpp
+	$(CPP) -c System/parameters.cpp -o System/parameters.o $(CXXFLAGS)
+
+System/verification.o: System/verification.cpp
+	$(CPP) -c System/verification.cpp -o System/verification.o $(CXXFLAGS)
+
+Enemies/enemies.o: Enemies/enemies.cpp
+	$(CPP) -c Enemies/enemies.cpp -o Enemies/enemies.o $(CXXFLAGS)
+
+Battle/battle.o: Battle/battle.cpp
+	$(CPP) -c Battle/battle.cpp -o Battle/battle.o $(CXXFLAGS)
+
+Map/map.o: Map/map.cpp
+	$(CPP) -c Map/map.cpp -o Map/map.o $(CXXFLAGS)
+
+Map/mapnavigation.o: Map/mapnavigation.cpp
+	$(CPP) -c Map/mapnavigation.cpp -o Map/mapnavigation.o $(CXXFLAGS)
+
+Items/items.o: Items/items.cpp
+	$(CPP) -c Items/items.cpp -o Items/items.o $(CXXFLAGS)
+
+Drawings/drawings.o: Drawings/drawings.cpp
+	$(CPP) -c Drawings/drawings.cpp -o Drawings/drawings.o $(CXXFLAGS)
+
+Store/store.o: Store/store.cpp
+	$(CPP) -c Store/store.cpp -o Store/store.o $(CXXFLAGS)
+
+Titles/titles.o: Titles/titles.cpp
+	$(CPP) -c Titles/titles.cpp -o Titles/titles.o $(CXXFLAGS)
+
+Help/help.o: Help/help.cpp
+	$(CPP) -c Help/help.cpp -o Help/help.o $(CXXFLAGS)
+
+Intro/Intro.o: Intro/Intro.cpp
+	$(CPP) -c Intro/Intro.cpp -o Intro/Intro.o $(CXXFLAGS)
+
+thalion_private.res: thalion_private.rc 
+	$(WINDRES) -i thalion_private.rc -F pe-i386 --input-format=rc -o thalion_private.res -O coff 
+
